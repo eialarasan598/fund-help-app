@@ -15,6 +15,7 @@ app.use((req, res, next) => {
 const authRoutes = require('./routes/auth');
 const groupRoutes = require('./routes/groups');
 const loanRoutes = require('./routes/loans');
+const dashboardRoutes = require('./routes/dashboard');
 
 // Simple health route
 app.get('/', (req, res) => {
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/groups', groupRoutes);
 app.use('/api/loans', loanRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Fallback 404 handler (returns JSON) to avoid Express default HTML response
 app.use((req, res) => {
